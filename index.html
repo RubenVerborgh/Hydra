@@ -25,6 +25,9 @@
       text-align: right;
       color: #999;
     }
+    a.source { font-style: italic; }
+    a.source::before { content: "("; }
+    a.source::after  { content: ")"; }
   </style>
 </head>
 <body>
@@ -32,9 +35,7 @@
     <div class="page-header">
     <h1>Hydra: Hypermedia-Driven Web APIs</h1>
     </div>
-    <p>Hydra is an effort to simplify the development of interoperable, hypermedia-driven Web APIs. The two fundamental
-      building blocks of Hydra are <a href="http://json-ld.org/">JSON&#x2011;LD</a> and the
-      <a href="spec/latest/core/">Hydra Core Vocabulary</a>.<p>
+    <p>Hydra is an effort to simplify the development of interoperable, hypermedia-driven Web APIs.</p>
     <p>JSON&#x2011;LD is the serialization format used in the communication between the server and its clients. The
       Hydra Core Vocabulary represents the shared vocabulary between them. By specifying a number of concepts which are
       commonly used in Web APIs it can be used as the foundation to build Web services that share REST's benefits in
@@ -43,17 +44,23 @@
     <h2>Specifications</h2>
     <ul>
       <li><a href="spec/latest/core/">Hydra Core Vocabulary</a></li>
-      <li><a href="http://www.w3.org/TR/json-ld/">JSON-LD 1.0</a></li>
+      <li><a href="spec/latest/linked-data-fragments/">Linked Data Fragments</a></li>
+      <li><a href="spec/latest/triple-pattern-fragments/">Triple Pattern Fragments</a></li>
     </ul>
-    <h2>Playground</h2>
-    <p>There exists a demo Web API featuring a simple issue tracker which allows you to try Hydra directly in your web
-      browser:</p>
-    <p style="text-align: center">
-      <a class="btn btn-primary" href="console/?url=http://www.markus-lanthaler.com/hydra/api-demo/">Launch Hydra Console</a>
-    </p>
-    <p>Of course, the complete source code of the
-      <a href="http://m.lanthi.com/sfHydraDemoApp">Hydra Issue Tracker Demo application</a> is available for you
-      to use as skeleton for your applications.</p>
+    <h2>Demos</h2>
+    <dl>
+      <dt>Hydra Core Vocabulary</dt>
+      <dd>
+        The <a href="console/?url=http://www.markus-lanthaler.com/hydra/api-demo/">Hydra Console</a>
+        is a generic client of APIs that use the Hydra Core Vocabulary.
+        <a href="http://m.lanthi.com/sfHydraDemoApp" class="source">source code</a>
+      </dd>
+      <dt>Linked Data Fragments</dt>
+        The <a href="http://client.linkeddatafragments.org/">Linked Data Fragments client</a>
+        can execute complex queries over Triple Pattern Fragment APIs
+        such as <a href="http://client.linkeddatafragments.org/">this one</a>.
+        <a href="http://github.com/LinkedDataFragments" class="source">source code</a>
+    </dl>
     <h2>Collaborating</h2>
     <p>Join the <a href="http://m.lanthi.com/HydraCG">Hydra W3C Community Group</a>
       (you need a <a href="https://www.w3.org/accounts/request">W3C account</a> to do so).
@@ -62,7 +69,7 @@
       request, or send a mail to
       <a href="http://lists.w3.org/Archives/Public/public-hydra/">Hydra's public mailing list</a>.</p>
     <h2>Source Code</h2>
-    <p>The Hydra project currently consists of the following parts:</p>
+    <p>The following source code uses Hydra technology:</p>
     <ul>
       <li><a href="http://m.lanthi.com/HydraBundleGH">HydraBundle</a>: a bundle for
         <a href="http://www.symfony.com">Symfony2</a> to create Web APIs based on Hydra</li>
@@ -71,11 +78,23 @@
       <li><a href="http://m.lanthi.com/HydraClientGH">HydraClient</a>: a PHP client library to access Hydra-powered Web
         APIs</li>
       <li><a href="http://m.lanthi.com/json-ld">JsonLD</a>: a JSON-LD processor implemented in PHP</li>
+      <li>A Linked Data Fragments Server serves triple pattern fragments <a href="https://github.com/LinkedDataFragments/Server.js" class="source">JavaScript</a> <a href="https://github.com/LinkedDataFragments/Server.Java" class="source">Java</a> <a href="https://github.com/elephantbirdconsulting/netkernel-contribution/tree/master/urn.com.elbeesee.kbodata.server" class="source">NetKernel</a></li>
+      <li>A Linked Data Fragments Client solves complex queries using triple pattern fragments <a href="https://github.com/LinkedDataFragments/Client.js" class="source">JavaScript</a> <a href="https://github.com/LinkedDataFragments/Client.Java" class="source">Java</a> <a href="https://github.com/LinkedDataFragments/WebClient" class="source">browser</a></li>
     </ul>
     <h2>Publications/Presentations</h2>
     <ul>
+      <li>R.&nbsp;Verborgh,
+        “<a href="http://www.slideshare.net/RubenVerborgh/the-lonesome-lod-cloud">The Lonesome LOD Cloud</a>,”
+        presented at the USEWOD workshop.</li>
+      <li>R.&nbsp;Verborgh, M.&nbsp;Vander&nbsp;Sande, P.&nbsp;Colpaert,
+          S.&nbsp;Coppens, E.&nbsp;Mannens, and R.&nbsp;Van de Walle,
+        “<a href="http://linkeddatafragments.org/publications/ldow2014.pdf">Web-Scale Querying through Linked Data Fragments</a>,”
+        presented at the API Strategy &amp; Practice Conference.</li>
       <li>M.&nbsp;Lanthaler,
         “<a href="http://m.lanthi.com/1hZucSQ">Full-on Hypermedia APIs with Hydra</a>,”
+        presented at the API Strategy &amp; Practice Conference.</li>
+      <li>R.&nbsp;Verborgh,
+        “<a href="http://www.slideshare.net/RubenVerborgh/hypermedia-cannot-be-the-engine">Hypermedia cannot be the engine</a>,”
         presented at the API Strategy &amp; Practice Conference.</li>
       <li>C.&nbsp;Pautasso, E.&nbsp;Wilde, and R.&nbsp;Alarcon (editors),
         “<a href="http://m.lanthi.com/springer2014-rest-book-toc">REST: Advanced Research Topics and Practical Applications</a>,”
